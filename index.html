@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kwetu Tech - Soluções tecnológicas personalizadas para empresas angolanas. Digitalização, automação e desenvolvimento de software para PMEs locais.">
+    <meta property="og:title" content="Soluções para Empresas | Kwetu Tech">
+    <meta property="og:description" content="Tecnologia adaptada para empresas angolanas com soluções de gestão, e-commerce e automação.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kwetutech.ao/empresas">
+    <meta property="og:image" content="https://kwetutech.ao/images/og-empresas.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://kwetutech.ao/empresas">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Soluções para Empresas | Kwetu Tech</title>
+    <style>
+    :root {
+        --primary: #3A86FF;
+        --secondary: #4CC9F0;
+        --accent: #F72585;
+        --accent2: #FF9E00;
+        --african1: #E09F3E;
+        --african2: #9A031E;
+        --dark: #121212;
+        --darker: #0D0D0D;
+        --light: #F0F0F0;
+        --medium: #C8C8C8;
+        --success: #2e7d32;
+        --error: #d32f2f;
+        --texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" opacity="0.05"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%233A86FF" stroke-width="0.3"/><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%234CC9F0" stroke-width="0.2"/></svg>');
+        --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-code: 'Fira Code', monospace;
+        --transition: cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-main);
+        background-color: var(--dark);
+        color: var(--light);
+        line-height: 1.6;
+        background-image: var(--texture);
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); }
+    h3 { font-size: clamp(1.4rem, 3vw, 1.8rem); }
+    h4 { font-size: clamp(1.2rem, 2.5vw, 1.4rem); }
+
+    .code-style {
+        font-family: var(--font-code);
+        background: rgba(58, 134, 255, 0.1);
+        padding: 0.2em 0.4em;
+        border-radius: 4px;
+        color: var(--primary);
+    }
+
+    /* Header */
+    header {
+        background-color: rgba(18, 18, 18, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 1rem 5%;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, var(--primary), var(--african1));
+        mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2L4,12L12,22L20,12L12,2Z" /></svg>') no-repeat center;
+        -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2L4,12L12,22L20,12L12,2Z" /></svg>') no-repeat center;
+    }
+
+    .logo-text {
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: linear-gradient(90deg, var(--primary), var(--african1));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Navigation */
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    nav a {
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        position: relative;
+        padding: 0.5rem 0;
+    }
+
+    nav a:focus-visible {
+        outline: 2px solid var(--african1);
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
+
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, var(--african1), var(--african2));
+        transition: width 0.3s ease;
+    }
+
+    nav a:hover::after, nav a:focus-visible::after {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--light);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .menu-toggle:focus-visible {
+        outline: 2px solid var(--african1);
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
+
+    .menu-toggle.active {
+        transform: rotate(90deg);
+    }
+
+    /* Focus styles */
+    :focus-visible {
+        outline: 2px solid var(--african1);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+
+    /* Hero Section */
+    .business-hero {
+        min-height: 80vh;
+        padding: 15vh 5% 5rem;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(18, 18, 18, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%), 
+                    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .business-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .business-hero h1 {
+        margin-bottom: 1.5rem;
+        color: var(--light);
+    }
+
+    .business-hero h1 span {
+        background: linear-gradient(90deg, var(--african1), var(--african2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .business-hero p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin-bottom: 2.5rem;
+        color: var(--light);
+    }
+
+    /* Buttons */
+    .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 0.9rem 1.8rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s var(--transition);
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn:focus-visible {
+        outline: 2px solid var(--light);
+        outline-offset: 2px;
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .btn:hover::before, .btn:focus-visible::before {
+        opacity: 1;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--african1), var(--african2));
+        color: var(--darker);
+        box-shadow: 0 4px 15px rgba(224, 159, 62, 0.3);
+    }
+
+    .btn-primary:hover, .btn-primary:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(224, 159, 62, 0.4);
+    }
+
+    .btn-secondary {
+        background-color: var(--primary);
+        color: var(--light);
+        box-shadow: 0 2px 10px rgba(58, 134, 255, 0.2);
+    }
+
+    .btn-secondary:hover, .btn-secondary:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+    }
+
+    .btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none !important;
+    }
+
+    /* Sections */
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--african1), var(--african2));
+    }
+
+    .section-title p {
+        color: var(--medium);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* Solutions Grid */
+    .solutions {
+        padding: 5rem 5%;
+        background-color: var(--darker);
+        position: relative;
+    }
+
+    .solutions::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(224, 159, 62, 0.3), transparent);
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .solution-card {
+        background: rgba(30, 30, 30, 0.6);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s var(--transition);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .solution-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .solution-card:hover, .solution-card:focus-within {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        border-color: rgba(224, 159, 62, 0.2);
+    }
+
+    .solution-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1.5rem;
+        color: var(--african1);
+    }
+
+    .solution-card h3 {
+        margin-bottom: 1rem;
+    }
+
+    .solution-card p {
+        color: var(--medium);
+        margin-bottom: 1.5rem;
+    }
+
+    .solution-features {
+        margin-top: 1.5rem;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .feature-item::before {
+        content: '→';
+        color: var(--african1);
+        flex-shrink: 0;
+    }
+
+    /* Process Section */
+    .process {
+        padding: 5rem 5%;
+        background-color: var(--dark);
+        position: relative;
+    }
+
+    .process::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(224, 159, 62, 0.3), transparent);
+    }
+
+    .process-steps {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .process-step {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.5s ease;
+    }
+
+    .process-step.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .step-number {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--african1), var(--african2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--darker);
+        font-size: 1.2rem;
+    }
+
+    .step-content {
+        flex-grow: 1;
+    }
+
+    .step-content h3 {
+        margin-bottom: 0.75rem;
+    }
+
+    .step-content p {
+        color: var(--medium);
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding: 5rem 5%;
+        background-color: var(--darker);
+        position: relative;
+    }
+
+    .testimonials::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(224, 159, 62, 0.3), transparent);
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        background: rgba(30, 30, 30, 0.6);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: 4px solid var(--african1);
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover, .testimonial-card:focus-within {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .testimonial-text::before {
+        content: '"';
+        font-size: 3rem;
+        position: absolute;
+        top: -1rem;
+        left: -1rem;
+        color: rgba(224, 159, 62, 0.2);
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .author-info h4 {
+        margin-bottom: 0.25rem;
+    }
+
+    .author-info p {
+        color: var(--medium);
+        font-size: 0.9rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: rgba(30, 30, 30, 0.6);
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--light);
+        font-family: var(--font-main);
+        transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--african1);
+    }
+
+    .form-control.invalid {
+        border-color: var(--error);
+    }
+
+    .form-control.valid {
+        border-color: var(--success);
+    }
+
+    .error-message {
+        color: var(--error);
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+        display: none;
+    }
+
+    .form-control.invalid + .error-message {
+        display: block;
+    }
+
+    textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .form-feedback {
+        padding: 1rem;
+        border-radius: 4px;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        display: none;
+    }
+
+    .form-feedback.success {
+        background-color: rgba(46, 125, 50, 0.2);
+        border: 1px solid var(--success);
+        color: var(--light);
+        display: block;
+    }
+
+    .form-feedback.error {
+        background-color: rgba(211, 47, 47, 0.2);
+        border: 1px solid var(--error);
+        color: var(--light);
+        display: block;
+    }
+
+    /* CTA Section */
+    .business-cta {
+        padding: 5rem 5%;
+        background: linear-gradient(135deg, rgba(58, 134, 255, 0.1) 0%, rgba(10, 10, 10, 0.9) 100%);
+        text-align: center;
+        position: relative;
+    }
+
+    .business-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(224, 159, 62, 0.3), transparent);
+    }
+
+    .business-cta h2 {
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .business-cta p {
+        color: var(--medium);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--darker);
+        padding: 3rem 5%;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, var(--primary), var(--african1));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-decoration: none;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: var(--medium);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover, .footer-links a:focus-visible {
+        color: var(--light);
+        outline: none;
+    }
+
+    .copyright {
+        color: var(--medium);
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        nav ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--darker);
+            flex-direction: column;
+            padding: 1rem;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+
+        nav ul.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .business-hero {
+            padding-top: 15vh;
+            text-align: center;
+        }
+
+        .business-hero p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            justify-content: center;
+        }
+
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .process-step {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .solution-card, .testimonial-card {
+            padding: 1.5rem;
+        }
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+        .business-hero h1 {
+            font-size: 1.8rem;
+        }
+        
+        .business-hero p {
+            font-size: 1rem;
+        }
+        
+        .solution-card, .testimonial-card {
+            padding: 1rem;
+        }
+        
+        .cta-buttons {
+            gap: 1rem;
+        }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo" aria-label="Kwetu Tech - Página Inicial">
+            <div class="logo-icon" aria-hidden="true"></div>
+            <div class="logo-text">Kwetu Tecnologias</div>
+        </a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+        <nav>
+            <ul id="main-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="mentoria.html">Mentoria</a></li>
+                <li><a href="#solutions">Soluções</a></li>
+                <li><a href="login.html">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="business-hero" id="empresas">
+        <div class="business-hero-content">
+            <h1>Soluções Tecnológicas <span>para Empresas Angolanas</span></h1>
+            <p>Impulsione seu negócio com tecnologia acessível e personalizada para o mercado angolano. Nossas soluções são desenvolvidas por talentos locais que entendem seus desafios.</p>
+            
+            <div class="cta-buttons">
+                <a href="#contact-form" class="btn btn-primary">
+                    Fale com Nossos Especialistas
+                </a>
+                <a href="#solutions" class="btn btn-secondary">
+                    Conheça Nossas Soluções
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soluções Section -->
+    <section class="solutions" id="solutions">
+        <div class="section-title">
+            <h2>Soluções Personalizadas para Seu Negócio</h2>
+            <p>Oferecemos tecnologia adaptada às necessidades específicas das empresas angolanas</p>
+        </div>
+        <div class="solutions-grid">
+            <div class="solution-card" aria-labelledby="solucao-gestao">
+                <div class="solution-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <h3 id="solucao-gestao">Sistemas de Gestão</h3>
+                <p>Soluções ERP e CRM personalizadas para otimizar operações, inventário e relacionamento com clientes.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item">Gestão de inventário e stock</div>
+                    <div class="feature-item">Faturação e contabilidade integrada</div>
+                    <div class="feature-item">Relatórios personalizados</div>
+                </div>
+            </div>
+            
+            <div class="solution-card" aria-labelledby="solucao-ecommerce">
+                <div class="solution-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </div>
+                <h3 id="solucao-ecommerce">E-commerce Local</h3>
+                <p>Plataformas de vendas online adaptadas aos métodos de pagamento e logística angolanos.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item">Integração com pagamentos locais</div>
+                    <div class="feature-item">Gestão de entregas</div>
+                    <div class="feature-item">Design responsivo</div>
+                </div>
+            </div>
+            
+            <div class="solution-card" aria-labelledby="solucao-apps">
+                <div class="solution-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12" y2="18"></line>
+                    </svg>
+                </div>
+                <h3 id="solucao-apps">Aplicativos Móveis</h3>
+                <p>Desenvolvimento de apps Android e iOS para engajar clientes e otimizar processos.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item">Design intuitivo</div>
+                    <div class="feature-item">Funcionamento offline</div>
+                    <div class="feature-item">Integração com sistemas existentes</div>
+                </div>
+            </div>
+            
+            <div class="solution-card" aria-labelledby="solucao-dados">
+                <div class="solution-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="10"></line>
+                        <line x1="18" y1="20" x2="18" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                </div>
+                <h3 id="solucao-dados">Análise de Dados</h3>
+                <p>Transforme dados em insights acionáveis com dashboards e relatórios inteligentes.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item">Visualização de dados</div>
+                    <div class="feature-item">Previsões de vendas</div>
+                    <div class="feature-item">Indicadores chave personalizados</div>
+                </div>
+            </div>
+            
+            <div class="solution-card" aria-labelledby="solucao-seguranca">
+                <div class="solution-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3 id="solucao-seguranca">Segurança Digital</h3>
+                <p>Proteja seus dados e sistemas com soluções de segurança adaptadas ao contexto local.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item">Proteção contra ameaças</div>
+                    <div class="feature-item">Backup automatizado</div>
+                    <div class="feature-item">Treinamento de equipe</div>
+                </div>
+            </div>
+            
+            <div class="solution-card" aria-labelledby="solucao-consultoria">
+                <div class="solution-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3 id="solucao-consultoria">Consultoria Tech</h3>
+                <p>Avaliação e plano de transformação digital para sua empresa com especialistas locais.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item">Diagnóstico tecnológico</div>
+                    <div class="feature-item">Roadmap de implementação</div>
+                    <div class="feature-item">Acompanhamento contínuo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo Section -->
+    <section class="process">
+        <div class="section-title">
+            <h2>Nosso Processo de Trabalho</h2>
+            <p>Colaboração transparente e resultados mensuráveis em cada etapa</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">1</div>
+                <div class="step-content">
+                    <h3>Diagnóstico Inicial</h3>
+                    <p>Analisamos seus processos atuais, desafios e objetivos para identificar as melhores oportunidades de transformação digital.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">2</div>
+                <div class="step-content">
+                    <h3>Proposta Personalizada</h3>
+                    <p>Desenvolvemos um plano de ação detalhado com soluções tecnológicas adaptadas ao seu orçamento e necessidades.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">3</div>
+                <div class="step-content">
+                    <h3>Desenvolvimento Iterativo</h3>
+                    <p>Criamos a solução em etapas, com validações frequentes para garantir que atenda plenamente às suas expectativas.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">4</div>
+                <div class="step-content">
+                    <h3>Implementação e Treinamento</h3>
+                    <p>Instalamos a solução e capacitamos sua equipe para garantir máxima eficiência na utilização.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">5</div>
+                <div class="step-content">
+                    <h3>Suporte Contínuo</h3>
+                    <p>Acompanhamos o desempenho e fazemos ajustes para garantir que a solução continue a agregar valor ao seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>Empresas que Confiaram na Kwetu Tech</h2>
+            <p>Veja o que nossos clientes dizem sobre nossas soluções</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    A Kwetu Tech revolucionou nossa gestão de inventário. O sistema que desenvolveram é simples, mas extremamente eficaz para nossa realidade. Finalmente temos controle total sobre nosso stock.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Carlos, Gerente do Supermercado Kianda" loading="lazy" width="50" height="50">
+                    </div>
+                    <div class="author-info">
+                        <h4>João Carlos</h4>
+                        <p>Gerente, Supermercado Kianda</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Nosso e-commerce cresceu 300% após a migração para a plataforma desenvolvida pela Kwetu. A integração com os métodos de pagamento locais foi fundamental para esse sucesso.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Antónia, Dona da Moda Luanda" loading="lazy" width="50" height="50">
+                    </div>
+                    <div class="author-info">
+                        <h4>Maria Antónia</h4>
+                        <p>Dona, Moda Luanda</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    A consultoria da Kwetu nos ajudou a identificar gargalos que nem sabíamos que existiam. Em 6 meses, automatizamos processos que economizaram 20 horas de trabalho por semana.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Pinto, Diretor da Transportes Benguela" loading="lazy" width="50" height="50">
+                    </div>
+                    <div class="author-info">
+                        <h4>David Pinto</h4>
+                        <p>Diretor, Transportes Benguela</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="business-cta" id="contact-form">
+        <h2>Fale com Nossos Especialistas</h2>
+        <p>Preencha o formulário abaixo e entraremos em contato para entender suas necessidades</p>
+        
+        <form class="contact-form" id="contactForm" action="#" method="POST" novalidate>
+            <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+            
+            <div class="form-group">
+                <label for="name">Seu Nome</label>
+                <input type="text" id="name" name="name" class="form-control" required aria-required="true">
+                <div class="error-message" id="name-error">Por favor, insira seu nome</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Empresa</label>
+                <input type="text" id="company" name="company" class="form-control" required aria-required="true">
+                <div class="error-message" id="company-error">Por favor, insira o nome da empresa</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required aria-required="true">
+                <div class="error-message" id="email-error">Por favor, insira um email válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" class="form-control" required aria-required="true">
+                <div class="error-message" id="phone-error">Por favor, insira um número de telefone válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Como podemos ajudar?</label>
+                <textarea id="message" name="message" class="form-control" required aria-required="true"></textarea>
+                <div class="error-message" id="message-error">Por favor, descreva como podemos ajudar</div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;" id="submit-btn">
+                Enviar Mensagem
+            </button>
+        </form>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="business-cta" id="contact">
+        <h2>Pronto para Transformar Seu Negócio com Tecnologia?</h2>
+        <p>Nossos especialistas estão prontos para entender suas necessidades e propor a melhor solução para sua empresa.</p>
+        
+        <div class="cta-buttons">
+            <a href="#contact-form" class="btn btn-primary">
+                Agendar Consulta Gratuita
+            </a>
+            <a href="tel:+244123456789" class="btn btn-secondary">
+                Ligue para Nós +244 123 456 789
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo" aria-label="Kwetu Tech - Página Inicial">Kwetu Tech</a>
+            <div class="footer-links">
+                <a href="index.html">Sobre Nós</a>
+                <a href="mentoria.html">Mentoria</a>
+                <a href="#solutions">Para Empresas</a>
+                <a href="#">Termos</a>
+                <a href="#">Privacidade</a>
+                <a href="#contact">Contactos</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Kwetu Tech. Orgulhosamente Angolana.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Animar elementos ao rolar
+        function animateOnScroll() {
+            const animateElements = document.querySelectorAll('.solution-card, .process-step');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            
+            animateElements.forEach((element, index) => {
+                const elementPosition = element.offsetTop;
+                
+                if (scrollPosition > elementPosition + 100) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 150);
+                }
+            });
+        }
+        
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Fechar menu mobile se aberto
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Form validation
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submit-btn');
+        const formFeedback = document.getElementById('form-feedback');
+        
+        // Validação em tempo real
+        form.addEventListener('input', (e) => {
+            const input = e.target;
+            validateField(input);
+        });
+        
+        // Validação ao perder o foco
+        form.addEventListener('blur', (e) => {
+            const input = e.target;
+            if (input.tagName === 'INPUT' || input.tagName === 'TEXTAREA') {
+                validateField(input);
+            }
+        }, true);
+        
+        function validateField(input) {
+            const errorId = `${input.id}-error`;
+            const errorElement = document.getElementById(errorId);
+            
+            if (input.validity.valid) {
+                input.classList.remove('invalid');
+                input.classList.add('valid');
+                errorElement.style.display = 'none';
+            } else {
+                input.classList.remove('valid');
+                input.classList.add('invalid');
+                errorElement.style.display = 'block';
+                
+                if (input.validity.valueMissing) {
+                    errorElement.textContent = 'Este campo é obrigatório';
+                } else if (input.type === 'email' && input.validity.typeMismatch) {
+                    errorElement.textContent = 'Por favor, insira um email válido';
+                }
+            }
+        }
+        
+        // Form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validate all fields
+            const inputs = form.querySelectorAll('input, textarea');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                validateField(input);
+                if (!input.validity.valid) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                formFeedback.textContent = 'Por favor, corrija os erros no formulário';
+                formFeedback.className = 'form-feedback error';
+                return;
+            }
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="btn-loader"></span> Enviando...';
+            
+            try {
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Show success message
+                formFeedback.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+                formFeedback.className = 'form-feedback success';
+                
+                // Reset form
+                form.reset();
+                
+                // Remove validation classes
+                inputs.forEach(input => {
+                    input.classList.remove('valid', 'invalid');
+                });
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formFeedback.textContent = '';
+                    formFeedback.className = 'form-feedback';
+                }, 5000);
+            } catch (error) {
+                formFeedback.textContent = 'Ocorreu um erro. Por favor, tente novamente.';
+                formFeedback.className = 'form-feedback error';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar Mensagem';
+            }
+        });
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            // Carregar fontes
+            const fontLink = document.createElement('link');
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap';
+            fontLink.rel = 'stylesheet';
+            document.head.appendChild(fontLink);
+            
+            // Configurar observador de rolagem
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Verificar na carga inicial
+            
+            // Adicionar lazy loading para imagens não críticas
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                // Garantir que as imagens tenham dimensões explícitas
+                if (!img.width || !img.height) {
+                    img.width = img.getAttribute('width') || 50;
+                    img.height = img.getAttribute('height') || 50;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
